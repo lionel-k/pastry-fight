@@ -1,0 +1,9 @@
+<h1>Dashboards#cook</h1>
+
+<p>Prochain lundi: <%= Date.today %></p>
+
+<%= simple_form_for @battle do |f| %>
+  <%= f.input :date %>
+  <%= f.association :pastries, as: :check_boxes %>
+  <%= f.button :submit %>
+<% end %>

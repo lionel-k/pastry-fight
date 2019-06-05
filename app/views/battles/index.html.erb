@@ -1,0 +1,8 @@
+<h1>All Battles</h1>
+<% @battles.each do |battle| %>
+  <p>Date: <%= battle.date %></p>
+  <% battle.pastries.each do |pastry| %>
+    <p><%= pastry.name %></p>
+  <% end %>
+  <hr>
+<% end %>
