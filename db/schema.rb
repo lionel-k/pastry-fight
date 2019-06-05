@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_05_105900) do
+ActiveRecord::Schema.define(version: 2019_06_05_110853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "battles", force: :cascade do |t|
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.bigint "pastry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pastry_id"], name: "index_employees_on_pastry_id"
+  end
 
   create_table "pastries", force: :cascade do |t|
     t.string "name"
@@ -21,4 +35,16 @@ ActiveRecord::Schema.define(version: 2019_06_05_105900) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "selections", force: :cascade do |t|
+    t.bigint "pastry_id"
+    t.bigint "battle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["battle_id"], name: "index_selections_on_battle_id"
+    t.index ["pastry_id"], name: "index_selections_on_pastry_id"
+  end
+
+  add_foreign_key "employees", "pastries"
+  add_foreign_key "selections", "battles"
+  add_foreign_key "selections", "pastries"
 end
