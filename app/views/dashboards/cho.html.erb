@@ -13,6 +13,6 @@
 
 
 <%= simple_form_for @battle, url: battles_path, method: :put do |f| %>
-  <%= f.association :pastries, as: :check_boxes %>
+  <%= f.association :competitions %>
   <%= f.button :submit %>
 <% end %>
