@@ -1,2 +1,18 @@
-<h1>Dashboards#cho</h1>
-<p>Find me in app/views/dashboards/cho.html.erb</p>
+<h1>Chief Happiness Officer</h1>
+
+<h1>All Battles</h1>
+  <p>Date: <%= @battle.date %></p>
+  <% @battle.pastries.each do |pastry| %>
+    <p><%= pastry.name %>:
+    <% pastry.employees.each do |employee| %>
+    <%= employee.name %>
+    <% end %>
+  </p>
+  <% end %>
+  <hr>
+
+
+<%= simple_form_for @battle, url: battles_path, method: :put do |f| %>
+  <%= f.association :pastries, as: :check_boxes %>
+  <%= f.button :submit %>
+<% end %>

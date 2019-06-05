@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   get 'chief-happiness-officer', to: 'dashboards#cho', as: :cho
   get 'cook-linguini', to: 'dashboards#cook', as: :cook
-  resources :battles, only: [:new, :create]
+  resources :battles, only: [:new, :create, :update]
 
   root to: "battles#index"
 end

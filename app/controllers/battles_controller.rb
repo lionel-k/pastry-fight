@@ -3,7 +3,6 @@
 class BattlesController < ApplicationController
   def index
     @battles = Battle.includes(:pastries)
-    # @battles = Battle.all
   end
 
   def new
@@ -16,6 +15,10 @@ class BattlesController < ApplicationController
     battle.pastry_ids = params[:battle][:pastry_ids]
     battle.save!
     redirect_to root_path
+  end
+
+  def update
+    raise
   end
 
   private
