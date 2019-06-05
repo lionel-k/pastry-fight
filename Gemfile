@@ -44,8 +44,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec-rails', '~> 3.8'
   gem 'database_cleaner'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development do
