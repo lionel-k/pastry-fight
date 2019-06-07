@@ -1,8 +1,8 @@
-<h1>Dashboards#cook</h1>
+<h1>Interface du Grand Chef Cuisto Linguini</h1>
 
 <p>Prochain lundi: <%= @next_monday %></p>
 
 <%= simple_form_for @battle do |f| %>
-  <%= f.association :pastries, as: :check_boxes %>
-  <%= f.button :submit %>
+  <%= f.association :pastries, as: :check_boxes, label: 'Pâtisserie' %>
+  <%= f.button :submit, value: 'Créer une bataille' %>
 <% end %>
