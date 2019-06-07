@@ -1,1 +1,1 @@
-# Pastry FightIn
+# Pastry Fight Coding Game

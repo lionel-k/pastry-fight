@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
+Battle.destroy_all
 Pastry.destroy_all
 Employee.destroy_all
-Battle.destroy_all
 
 pastries = ['Financier', 'Cookies', 'Cornes de gazelle', 'Churros', 'Flan', 'Fruits']
 
@@ -30,8 +30,3 @@ employees.each do |employee|
   Employee.create(name: employee[:name],
     pastry: Pastry.find_by_name(employee[:pastry]))
 end
-
-battle1 = Battle.new(date: Date.today)
-battle1.pastries << Pastry.first
-battle1.pastries << Pastry.last
-battle1.save!
