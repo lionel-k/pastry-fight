@@ -1,13 +1,23 @@
-<h1>All Battles</h1>
-<%= link_to 'Add a new battle', new_battle_path %>
+<h1>Toutes les batailles</h1>
+<%= link_to 'Ajouter une nouvelle bataille', new_battle_path %>
 <hr>
-<% @battles.each do |battle| %>
-  <p>Date: <%= battle.date %></p>
-  <% battle.competitions.each do |competition| %>
-    <p><%= competition.pastry.name %>:
-      <%= competition.employee.nil? ? '-' : competition.employee.name %>
+<ul>
+  <% @battles.each do |battle| %>
+  <li>
+    Date: <%= battle.date %>
+    <ol>
+    <% battle.competitions.each do |competition| %>
+      <p>
+        <li>
+          <%= competition.pastry.name %>: <%= competition.employee.nil? ? '-' : competition.employee.name %>
+        </li>
+      </p>
+    <% end %>
+    </ol>
+    <p>
+      <%= link_to 'Ajouter les cuistos', edit_battle_path(battle) %>
     </p>
-  <% end %>
-  <%= link_to 'Ajouter les cuistos', edit_battle_path(battle) %>
+  </li>
   <hr>
-<% end %>
+  <% end %>
+</ul>
