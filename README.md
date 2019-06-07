@@ -13,4 +13,4 @@
 
 ### Database Schema
 
-![alt text](https://raw.githubusercontent.com/lionel-k/pastry-fight/master/api/public/database-schema.png)
+![alt text](https://raw.githubusercontent.com/lionel-k/pastry-fight/master/public/database-schema.png)
