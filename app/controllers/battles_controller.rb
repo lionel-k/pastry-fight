@@ -11,25 +11,39 @@ class BattlesController < ApplicationController
   end
 
   def create
-    battle = Battle.new(date: date_of_next('Monday'))
+    battle = Battle.create!(date: date_of_next('Monday'))
     battle.pastry_ids = params[:battle][:pastry_ids]
     battle.save!
     redirect_to root_path
   end
 
+  def edit
+    @battle = battle
+  end
+
   def update
-    raise
+    params[:battle][:competitions_attributes].each do |comp_params|
+      competition = Competition.find(comp_params.last[:id])
+      competition.update(employee: Employee.find(comp_params.last[:employee_id]))
+    end
+    redirect_to root_path
   end
 
   private
 
+  def battle
+    Battle.find(params[:id])
+  end
+
   def battle_params
-    params.require(:battle).permit(:pastry_ids)
+    params
+      .require(:battle)
+      .permit(:pastry_ids)
   end
 
   def date_of_next(day)
     date = Date.parse(day)
-    delta = date > Date.today ? 0 : 7
+    delta = date > Time.zone.today ? 0 : 7
     date + delta
   end
 end

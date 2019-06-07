@@ -1,8 +1,13 @@
 <h1>All Battles</h1>
+<%= link_to 'Add a new battle', new_battle_path %>
+<hr>
 <% @battles.each do |battle| %>
   <p>Date: <%= battle.date %></p>
-  <% battle.pastries.each do |pastry| %>
-    <p><%= pastry.name %></p>
+  <% battle.competitions.each do |competition| %>
+    <p><%= competition.pastry.name %>:
+      <%= competition.employee.nil? ? '-' : competition.employee.name %>
+    </p>
   <% end %>
+  <%= link_to 'Ajouter les cuistos', edit_battle_path(battle) %>
   <hr>
 <% end %>

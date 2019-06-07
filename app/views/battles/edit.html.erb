@@ -1,0 +1,13 @@
+<h1>Chief Happiness Officer</h1>
+
+<h1>Edit Battle <%= @battle.id %></h1>
+  <p>Date: <%= @battle.date %></p>
+  <%= simple_form_for @battle, url: battle_path(@battle), method: :put do |f| %>
+
+    <%= f.fields_for :competitions do |competition_form| %>
+      <%= competition_form.association :employee, label: competition_form.object.pastry.name, collection: competition_form.object.pastry.employees %>
+    <% end %>
+
+  <%= f.button :submit %>
+  <hr>
+<% end %>
