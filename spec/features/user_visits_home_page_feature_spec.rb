@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 feature 'User visits home page' do
-  scenario 'with 5 created battles' do
+  scenario 'There are 5 created battles' do
     5.times do
-      Battle.create!(date: Date.today)
+      Battle.create!(date: Time.zone.today)
     end
     visit root_path
     # fill_in 'Email', with: email
@@ -13,6 +13,17 @@ feature 'User visits home page' do
     # click_button 'Sign up'
 
     expect(page).to have_content('Toutes les batailles')
+    expect(page).to have_content('(5)')
+  end
+
+  scenario 'There are no created battles' do
+    visit root_path
+    # fill_in 'Email', with: email
+    # fill_in 'Password', with: password
+    # click_button 'Sign up'
+
+    expect(page).to have_content('Toutes les batailles')
+    expect(page).to have_content('(0)')
   end
 
   # scenario 'with invalid email' do
