@@ -34,12 +34,16 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 3.8'
   gem 'capybara'
+  gem 'cucumber-rails', require: false
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
   # gem 'chromedriver-helper'
   # gem 'selenium-  webdriver'
 end
 
 group :test do
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
 
 group :development do
