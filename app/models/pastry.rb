@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Pastry < ApplicationRecord
+  validates :name, presence: true
+
   has_many :employees, dependent: :destroy
-  has_many :selections, dependent: :destroy
-  has_many :battles, through: :selections
+  has_many :competitions, dependent: :destroy
+  has_many :battles, through: :competitions
 end

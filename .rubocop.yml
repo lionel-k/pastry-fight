@@ -14,6 +14,7 @@ AllCops:
       - 'tmp/*'
       - 'Guardfile'
       - 'node_modules/**/*' #webpacker & rails 5.1
+      - 'lib/tasks/*'
 
 Rails:
   Enabled: true
@@ -68,6 +69,8 @@ MethodLength:
   Max: 20
 Metrics/LineLength:
   Max: 110
+  Exclude:
+    - 'features/support/env.rb'
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'namespace']
   Exclude:
