@@ -11,6 +11,6 @@
 #     page.check '#battle_pastry_ids_2'
 #     # find(:css, '#battle_pastry_ids_2').set(true)
 #     # find('label[for="battle_pastry_ids_2"]').click
-#     expect { click_button 'Créer une bataille' }.to change { Battle.count }.from(0).to(1)
+#     expect { click_button 'Creer une bataille' }.to change { Battle.count }.from(0).to(1)
 #   end
 # end
