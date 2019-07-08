@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-require 'capybara/rspec'
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start 'rails'
+
+require 'capybara/rspec'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

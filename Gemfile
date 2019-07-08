@@ -33,18 +33,14 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
-  gem 'cucumber-rails', require: false
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.8'
   gem 'shoulda-matchers'
-  # gem 'chromedriver-helper'
-  # gem 'selenium-  webdriver'
+  gem 'simplecov', require: false
 end
 
 group :test do
   gem 'database_cleaner'
-  gem 'rails-controller-testing'
-  gem 'simplecov', require: false
 end
 
 group :development do
