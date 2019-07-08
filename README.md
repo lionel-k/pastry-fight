@@ -1,5 +1,7 @@
 # Pastry Fight Coding Game
 
+[![CodeFactor](https://www.codefactor.io/repository/github/lionel-k/pastry-fight/badge)](https://www.codefactor.io/repository/github/lionel-k/pastry-fight)
+
 ### To run the API in local environment
 
 - `git clone https://github.com/lionel-k/pastry-fight.git`
