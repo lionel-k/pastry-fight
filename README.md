@@ -2,7 +2,7 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/lionel-k/pastry-fight/badge)](https://www.codefactor.io/repository/github/lionel-k/pastry-fight)
 
-[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
+[![DepShield Badge](https://depshield.sonatype.org/badges/lionel-k/pastry-fight/depshield.svg)](https://depshield.github.io)
 
 ### To run the API in local environment
 
