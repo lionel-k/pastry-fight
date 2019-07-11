@@ -4,20 +4,19 @@ require 'rails_helper'
 
 feature 'User creates a new battle' do
   scenario 'chooses 3 pastries' do
-    pastries = ['Financier', 'Cookies', 'Cornes de gazelle', 'Churros', 'Flan', 'Fruits']
-
-    pastries.each do |pastry|
-      Pastry.create!(name: pastry)
+    10.times do
+      create(:pastry)
     end
+
     visit new_battle_path
-    check('Financier')
-    check('Cookies')
-    check('Fruits')
+    check('Pastry-1')
+    check('Pastry-4')
+    check('Pastry-8')
 
     click_button 'Créer une bataille'
 
     expect(Battle.count).to eq(1)
     expect(page).to have_content('(1)')
-    expect(Battle.last.pastries.pluck(:name)).to eq(['Financier', 'Cookies', 'Fruits'])
+    expect(Battle.last.pastries.pluck(:name)).to eq(['Pastry-1', 'Pastry-4', 'Pastry-8'])
   end
 end
