@@ -1,7 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/lionel-k/pastry-fight/badge)](https://www.codefactor.io/repository/github/lionel-k/pastry-fight)
-
 [![DepShield Badge](https://depshield.sonatype.org/badges/lionel-k/pastry-fight/depshield.svg)](https://depshield.github.io)
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/7e6a1c367299c78b00ce/maintainability)](https://codeclimate.com/github/lionel-k/pastry-fight/maintainability)
 
 # Pastry Fight Coding Game
