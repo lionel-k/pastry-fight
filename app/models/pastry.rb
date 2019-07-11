@@ -5,5 +5,5 @@ class Pastry < ApplicationRecord
 
   has_many :employees, dependent: :destroy
   has_many :competitions, dependent: :destroy
-  has_many :battles, through: :competitions
+  has_many :battles, through: :competitions, dependent: :destroy
 end
