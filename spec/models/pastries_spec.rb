@@ -2,27 +2,14 @@
 
 require 'rails_helper'
 
-describe 'Pastry' do
-  # VALIDATIONS
-
-  it 'has a name' do
-    Pastry.create!(name: 'Flan')
-    expect(Pastry.count).to eq(1)
+RSpec.describe Pastry, type: :model do
+  describe 'Associations' do
+    it { should have_many(:employees).class_name('Employee').dependent(:destroy) }
+    it { should have_many(:battles).class_name('Battle').dependent(:destroy) }
+    it { should have_many(:competitions).class_name('Competition').dependent(:destroy) }
   end
 
-  it 'has a name which is not blank or nil' do
-    expect do
-      Pastry.create!
-    end.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Name can't be blank")
-  end
-
-  # ASSOCIATIONS
-
-  it 'has many employees' do
-    pastry = Pastry.create(name: 'Flan')
-    employees = ['Tom', 'Mary', 'Suzanne'].map do |name|
-      Employee.create!(name: name, pastry: pastry)
-    end
-    expect(pastry.employees).to eq(employees)
+  describe 'Validations' do
+    it { should validate_presence_of(:name) }
   end
 end

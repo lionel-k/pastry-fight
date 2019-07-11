@@ -2,23 +2,12 @@
 
 require 'rails_helper'
 
-describe 'Employee' do
-  let(:pastry) do
-    Pastry.create!(name: 'Flan')
+RSpec.describe Employee, type: :model do
+  describe 'Associations' do
+    it { should belong_to(:pastry) }
   end
 
-  it 'has a name' do
-    employee = Employee.new(name: 'Peter', pastry: pastry)
-    expect(employee).to be_valid
-  end
-
-  it 'has a non blank name' do
-    employee = Employee.new(pastry: pastry)
-    expect(employee).not_to be_valid
-  end
-
-  it 'belongs to a pastry' do
-    employee = Employee.new(name: 'Peter')
-    expect(employee).not_to be_valid
+  describe 'Validations' do
+    it { should validate_presence_of(:name) }
   end
 end
