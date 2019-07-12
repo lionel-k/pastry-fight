@@ -23,8 +23,9 @@ class BattlesController < ApplicationController
 
   def update
     params[:battle][:competitions_attributes].each do |comp_params|
-      competition = Competition.find(comp_params.last[:id])
-      competition.update(employee: Employee.find(comp_params.last[:employee_id]))
+      Competition
+        .find(comp_params.last[:id])
+        .update(employee: Employee.find(comp_params.last[:employee_id]))
     end
     redirect_to root_path
   end
