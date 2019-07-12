@@ -5,7 +5,7 @@
   <%= simple_form_for @battle, url: battle_path(@battle), method: :put do |f| %>
 
     <%= f.fields_for :competitions do |competition_form| %>
-      <%= competition_form.association :employee, label: competition_form.object.pastry.name, collection: competition_form.object.pastry.employees %>
+      <%= competition_form.association :employee, label: competition_form.object.pastry.name, collection: competition_form.object.pastry.employees, id: "#{rand}" %>
     <% end %>
 
   <%= f.button :submit, value: 'Mettre à jour la bataille' %>

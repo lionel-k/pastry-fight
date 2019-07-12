@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-feature 'User visits home page' do
+feature 'Linguini visits home page' do
   scenario 'There are 5 created battles' do
     5.times do
       Battle.create!(date: Time.zone.today)
