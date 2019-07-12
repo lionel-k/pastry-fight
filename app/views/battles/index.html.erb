@@ -9,7 +9,7 @@
     <% battle.competitions.each do |competition| %>
       <p>
         <li>
-          <%= competition.pastry.name %>: <%= competition.employee.nil? ? '-' : competition.employee.name %>
+          <%= competition.pastry_name %>: <%= competition.employee.nil? ? '-' : competition.employee_name %>
         </li>
       </p>
     <% end %>
