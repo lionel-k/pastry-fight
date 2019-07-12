@@ -36,12 +36,6 @@ class BattlesController < ApplicationController
     Battle.find(params[:id])
   end
 
-  def battle_params
-    params
-      .require(:battle)
-      .permit(:pastry_ids)
-  end
-
   def date_of_next(day)
     date = Date.parse(day)
     delta = date > Time.zone.today ? 0 : 7
