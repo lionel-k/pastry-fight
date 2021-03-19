@@ -34,7 +34,7 @@ group :development, :test do
   gem 'capybara'
   gem 'capybara-selenium'
   gem 'factory_bot_rails'
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 5.0'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
 end
